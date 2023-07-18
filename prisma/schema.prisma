@@ -1,0 +1,23 @@
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../libs/prisma/src/lib/generated"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+generator typegraphql {
+  provider = "nestql-crud"
+  output   = "../libs/graphql/src/lib/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String  @id @default(uuid())
+  firstName  String?
+  lastName   String?
+  patronymic String?
+  email      String? @unique
+}
