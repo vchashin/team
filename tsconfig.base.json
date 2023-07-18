@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tm/graphql": ["libs/graphql/src/index.ts"],
+      "@tm/prisma": ["libs/prisma/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
